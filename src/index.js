@@ -1,8 +1,6 @@
 //类型判断
 // let say:String = 'hello';
 // let say2:Number = 2232123;
-
-
 //interface接口
 // interface Person{
 //     name:String;
@@ -14,22 +12,17 @@
 // let obj = { name:'rmx',age:20};
 // console.log(getPerson(obj));
 
-
 //类的编写
-class Student {
-    fullName: string;
-    constructor(public firstName, public middleInitial, public lastName) {
+var Student = /** @class */ (function () {
+    function Student(firstName, middleInitial, lastName) {
+        this.firstName = firstName;
+        this.middleInitial = middleInitial;
+        this.lastName = lastName;
         this.fullName = firstName + " " + middleInitial + " " + lastName;
     }
-}
-
-interface Person {
-    firstName: string;
-    lastName: string;
-}
-
-function greeter(person : Person) {
+    return Student;
+}());
+function greeter(person) {
     return "Hello, " + person.firstName + " " + person.lastName;
 }
-
-let user = new Student("Jane", "M.", "User");
+var user = new Student("Jane", "M.", "User");
